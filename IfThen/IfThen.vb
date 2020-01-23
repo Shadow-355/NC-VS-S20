@@ -12,14 +12,18 @@ Module IfThen
         Dim secondNumber As Integer
 
         firstNumber = 3
-        secondNumber = 3
+        secondNumber = 2
 
 
         If firstNumber > secondNumber Then
             Console.WriteLine("First Number is bigger.")
         ElseIf firstNumber < secondNumber Then
             Console.WriteLine("First Number is smaller.")
-        ElseIf firstNumber <= secondNumber Then
+        ElseIf firstNumber = secondNumber Then
+            Console.WriteLine("Numbers are equal.")
+        End If
+
+        If firstNumber <= secondNumber Then
             Console.WriteLine("First number is smaller or equal to.")
         ElseIf firstNumber >= secondNumber Then
             Console.WriteLine("First number is bigger or equal to.")
