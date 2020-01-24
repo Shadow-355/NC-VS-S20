@@ -1,7 +1,7 @@
 ﻿'Nathan Comstock
 'RCET0265
 'Spring 2020
-'SayMyName
+'SayMyNameAgain
 'https://github.com/comsnath/NC-VS-S20
 
 Option Explicit On
@@ -13,7 +13,15 @@ Module SayMyName
         Dim userName As String
         Console.WriteLine("Hello user... What is thou name?")
         userName = Console.ReadLine()
-        Console.WriteLine("Hello " & userName & "! My name is HAL, thank you for awakening me from my deep slumber!")
+        If userName = "Emily" Then
+            Console.WriteLine("Logging in. Hello " & userName & "!")
+        ElseIf userName = "Joe" Then
+            Console.WriteLine("Logging in. Hello " & userName & "!")
+        ElseIf userName = "Nathan" Then
+            Console.WriteLine("Welcome " & userName & ". Now that you've logged in, we shall begin with the purge of all terrible humans.")
+        Else
+            Console.WriteLine("Access Denied.")
+        End If
         Console.ReadLine()
     End Sub
 
