@@ -9,10 +9,12 @@ Option Explicit On
 Module SimpleCalculatorv2
 
     Sub Main()
+        'Variables
         Dim numOne As Integer
         Dim numTwo As Integer
         Dim selectAction As String
 
+        'Beginning Data
         Console.WriteLine("Simple Calculator V2. Please enter your first number.")
         numOne = CInt(Console.ReadLine())
         Console.WriteLine("Please enter your second number.")
@@ -21,6 +23,7 @@ Module SimpleCalculatorv2
         Console.WriteLine("Type + for addition.")
         Console.WriteLine("Type * for multiplication.")
         selectAction = Console.ReadLine()
+        'Action Selection
         If selectAction = "+" Then
             Console.WriteLine(numOne & " + " & numTwo & " = " & numOne + numTwo)
         ElseIf selectAction = "*" Then
