@@ -10,12 +10,14 @@ Option Explicit On
 Module SubFunction
 
     Sub Main()
-        Dim myNumber As Integer
-        myNumber = 7
-        Console.WriteLine("In Main")
-        Console.WriteLine(myNumber)
-        Console.ReadLine()
-        Sub2(myNumber)
+        'Dim myNumber As Integer
+        'myNumber = 7
+        'Console.WriteLine("In Main")
+        'Console.WriteLine(myNumber)
+        'Console.ReadLine()
+        'Sub2(myNumber)
+        'DoMath(7, 5, "+")
+
     End Sub
 
     Sub Sub2(myNumber As Integer)
@@ -35,4 +37,33 @@ Module SubFunction
 
     End Function
 
+    Sub DoMath(firstNumber As Integer, secondNumber As Integer, operatorchoice As String)
+        'Insert Code Here
+        'Dim result As Decimal
+
+        'If operatorchoice = "+" Then
+        '    result = firstNumber + secondNumber
+        'ElseIf operatorchoice = "*" Then
+        '    result = firstNumber * secondNumber
+        'ElseIf operatorchoice = "/" Then
+        '    result = firstNumber / secondNumber
+        'End If
+        'Console.ReadLine(result)
+
+    End Sub
+    Sub ShowPattern(length As Integer)
+
+        Dim character As String
+        character = "*"
+        Dim pattern As String
+
+        For index = 1 To length
+            pattern &= character
+            ShowPattern(5)
+            Console.WriteLine(pattern)
+
+        Next
+        Console.ReadLine()
+
+    End Sub
 End Module
