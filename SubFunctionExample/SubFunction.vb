@@ -17,6 +17,11 @@ Module SubFunction
         'Console.ReadLine()
         'Sub2(myNumber)
         'DoMath(7, 5, "+")
+        For i = 1 To 100
+            ShowPattern(i, ">")
+        Next
+
+
 
     End Sub
 
@@ -51,19 +56,22 @@ Module SubFunction
         'Console.ReadLine(result)
 
     End Sub
-    Sub ShowPattern(length As Integer)
+    Sub ShowPattern(length As Integer, character As String)
 
-        Dim character As String
-        character = "*"
         Dim pattern As String
 
         For index = 1 To length
             pattern &= character
-            ShowPattern(5)
+            Console.WriteLine(pattern)
+
+        Next
+
+
+        For index = length - 1 To 1 Step -1
+            pattern = Left(pattern, index * Len(character))
             Console.WriteLine(pattern)
 
         Next
         Console.ReadLine()
-
     End Sub
 End Module
