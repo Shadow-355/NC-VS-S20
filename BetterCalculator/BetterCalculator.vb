@@ -4,12 +4,15 @@
 'BetterCalculator
 'https://github.com/comsnath/NC-VS-S20
 
+Option Strict On
+Option Explicit On
+
 Module BetterCalculator
 
     Sub Main()
         'Variables
-        Dim numOne As Integer
-        Dim numTwo As Integer
+        Dim numOne As String
+        Dim numTwo As String
         Dim selectAction As String
         Dim quitChoice As Boolean
         Dim promptUser As Boolean
@@ -20,14 +23,32 @@ Module BetterCalculator
         Do While quitChoice = True
 
             'Beginning Data
-            Console.WriteLine("Please enter two numbers. Enter ""Q"" at any time to quit.")
-            Try
-                    numOne = CInt(Console.ReadLine())
-                    promptUser = False
-                Catch ex As Exception
-                    Console.WriteLine("Error. Please try again.")
-                    promptUser = True
-                End Try
+            Do While promptUser = True
+                Console.WriteLine("Please enter two numbers. Enter ""Q"" at any time to quit.")
+                Console.Write("Choose a Number: ")
+                numOne = Console.ReadLine()
+                If numOne = "q" Then
+                    Exit Sub
+                ElseIf numOne = "Q" Then
+                    Exit Sub
+                Else
+                    Try
+                        numOne = String
+                    Catch ex As Exception
+                        Console.WriteLine("You entered " + numOne + ", please enter a whole number.")
+                        promptUser = True
+                    End Try
+                End If
+
+
+                'Try
+                '    Console.Write("Choose a Number: ")
+                '    numOne = Console.Read()
+                '    promptUser = False
+                'Catch ex As Exception
+
+                '    promptUser = True
+                'End Try
             Loop
 
             promptUser = True
@@ -35,7 +56,7 @@ Module BetterCalculator
             Console.WriteLine("Please enter your second number.")
             Do While promptUser = True
                 Try
-                    numTwo = CInt(Console.ReadLine())
+                    'numTwo = CInt(Console.ReadLine())
                     promptUser = False
                 Catch ex As Exception
                     Console.WriteLine("Error. Please try again.")
@@ -60,7 +81,7 @@ Module BetterCalculator
                     promptUser = False
                 ElseIf selectAction = "*" Then
                     'Try
-                    Console.WriteLine(numOne & " * " & numTwo & " = " & numOne * numTwo)
+                    'Console.WriteLine(numOne & " * " & numTwo & " = " & numOne * numTwo)
                     'Catch ex As Exception
                     '    Console.WriteLine("Error. Please try again.")
                     'End Try
@@ -76,9 +97,9 @@ Module BetterCalculator
             Else
                 quitChoice = True
             End If
-        Console.Clear()
+            Console.Clear()
 
-
+        Loop
 
 
 
