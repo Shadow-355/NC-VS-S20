@@ -28,7 +28,7 @@ Module SimpleCalculatorv2
                     numOne = CInt(Console.ReadLine())
                     promptUser = False
                 Catch ex As Exception
-                    Console.WriteLine("Error. Please try again.")
+                    Console.WriteLine("You entered: " + CStr(numOne) + "Please enter a whole number.")
                     promptUser = True
                 End Try
             Loop

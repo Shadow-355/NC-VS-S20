@@ -12,95 +12,121 @@ Module BetterCalculator
     Sub Main()
         'Variables
         Dim numOne As String
+        Dim numOneConverted As Integer
         Dim numTwo As String
+        Dim numTwoConverted As Integer
         Dim selectAction As String
         Dim quitChoice As Boolean
         Dim promptUser As Boolean
-
         promptUser = True
-        quitChoice = True
 
-        Do While quitChoice = True
+        'Start Program
+        Do While promptUser = True
 
-            'Beginning Data
+            'First Number Prompt
+            promptUser = True
+            Console.WriteLine("Please enter two numbers. Enter ""Q"" at any time to quit.")
             Do While promptUser = True
-                Console.WriteLine("Please enter two numbers. Enter ""Q"" at any time to quit.")
                 Console.Write("Choose a Number: ")
                 numOne = Console.ReadLine()
-                If numOne = "q" Then
-                    Exit Sub
-                ElseIf numOne = "Q" Then
-                    Exit Sub
-                Else
-                    Try
-                        numOne = String
-                    Catch ex As Exception
-                        Console.WriteLine("You entered " + numOne + ", please enter a whole number.")
-                        promptUser = True
-                    End Try
-                End If
-
-
-                'Try
-                '    Console.Write("Choose a Number: ")
-                '    numOne = Console.Read()
-                '    promptUser = False
-                'Catch ex As Exception
-
-                '    promptUser = True
-                'End Try
-            Loop
-
-            promptUser = True
-
-            Console.WriteLine("Please enter your second number.")
-            Do While promptUser = True
                 Try
-                    'numTwo = CInt(Console.ReadLine())
+                    numOneConverted = CInt(numOne)
                     promptUser = False
                 Catch ex As Exception
-                    Console.WriteLine("Error. Please try again.")
-                    promptUser = True
+                    If numOne = "q" Then
+                        Console.WriteLine("You entered """ + numOne + """")
+                        Console.WriteLine("Have a nice day.")
+                        Console.WriteLine("Press enter to close this window.")
+                        Console.ReadLine()
+                        Exit Sub
+                    ElseIf numOne = "Q" Then
+                        Console.WriteLine("You entered """ + numOne + """")
+                        Console.WriteLine("Have a nice day.")
+                        Console.WriteLine("Press enter to close this window.")
+                        Console.ReadLine()
+                        Exit Sub
+                    Else
+                        Console.WriteLine("You entered """ + numOne + """, please enter a whole number.")
+                        promptUser = True
+                    End If
                 End Try
             Loop
+            Console.WriteLine("You entered """ + numOne + """")
 
+            'Second Number Prompt
             promptUser = True
+            Do While promptUser = True
+                Console.Write("Choose a Number: ")
+                numTwo = Console.ReadLine()
+                Try
+                    numTwoConverted = CInt(numTwo)
+                    promptUser = False
+                Catch ex As Exception
+                    If numTwo = "q" Then
+                        Console.WriteLine("You entered """ + numTwo + """")
+                        Console.WriteLine("Have a nice day.")
+                        Console.WriteLine("Press enter to close this window.")
+                        Console.ReadLine()
+                        Exit Sub
+                    ElseIf numTwo = "Q" Then
+                        Console.WriteLine("You entered """ + numTwo + """")
+                        Console.WriteLine("Have a nice day.")
+                        Console.WriteLine("Press enter to close this window.")
+                        Console.ReadLine()
+                        Exit Sub
+                    Else
+                        Console.WriteLine("You entered """ + numTwo + """, please enter a whole number.")
+                        promptUser = True
+                    End If
+                End Try
+            Loop
+            Console.WriteLine("You entered """ + numTwo + """")
 
             'Action Selection
+            promptUser = True
             Do While promptUser = True
-                Console.WriteLine("Would you like to Multiply or Add?")
-                Console.WriteLine("Type + for addition.")
-                Console.WriteLine("Type * for multiplication.")
+                Console.WriteLine("Choose one of the following options:")
+                Console.WriteLine("1. Add")
+                Console.WriteLine("2. Subtract")
+                Console.WriteLine("3. Multiply")
+                Console.WriteLine("4. Divide")
                 selectAction = Console.ReadLine()
-                If selectAction = "+" Then
-                    'Try
-                    Console.WriteLine(numOne & " + " & numTwo & " = " & numOne + numTwo)
-                    'Catch ex As Exception
-                    '    Console.WriteLine("Error. Please try again.")
-                    'End Try
+                If selectAction = "q" Then
+                    Console.WriteLine("You entered """ + selectAction + """")
+                    Console.WriteLine("Have a nice day.")
+                    Console.WriteLine("Press enter to close this window.")
+                    Console.ReadLine()
+                    Exit Sub
+                ElseIf selectAction = "Q" Then
+                    Console.WriteLine("You entered """ + selectAction + """")
+                    Console.WriteLine("Have a nice day.")
+                    Console.WriteLine("Press enter to close this window.")
+                    Console.ReadLine()
+                    Exit Sub
+                ElseIf selectAction = "1" Then
+                    Console.WriteLine("You entered """ + selectAction + """")
+                    Console.WriteLine(numOne & " + " & numTwo & " = " & numOneConverted + numTwoConverted)
                     promptUser = False
-                ElseIf selectAction = "*" Then
-                    'Try
-                    'Console.WriteLine(numOne & " * " & numTwo & " = " & numOne * numTwo)
-                    'Catch ex As Exception
-                    '    Console.WriteLine("Error. Please try again.")
-                    'End Try
+                ElseIf selectAction = "2" Then
+                    Console.WriteLine("You entered """ + selectAction + """")
+                    Console.WriteLine(numOne & " - " & numTwo & " = " & numOneConverted - numTwoConverted)
+                    promptUser = False
+                ElseIf selectAction = "3" Then
+                    Console.WriteLine("You entered """ + selectAction + """")
+                    Console.WriteLine(numOne & " * " & numTwo & " = " & numOneConverted * numTwoConverted)
+                    promptUser = False
+                ElseIf selectAction = "4" Then
+                    Console.WriteLine("You entered """ + selectAction + """")
+                    Console.WriteLine(numOne & " / " & numTwo & " = " & numOneConverted / numTwoConverted)
                     promptUser = False
                 Else
-                    Console.WriteLine("Error. Please try again.")
+                    Console.WriteLine("You entered """ + selectAction + """")
                     promptUser = True
                 End If
+
             Loop
-            Console.WriteLine("Press any key to try again. Press Q to quit.")
-            If Console.ReadLine() = "Q" Then
-                quitChoice = False
-            Else
-                quitChoice = True
-            End If
-            Console.Clear()
-
+            promptUser = True
         Loop
-
 
 
 
