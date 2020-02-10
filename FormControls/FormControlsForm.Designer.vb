@@ -28,9 +28,13 @@ Partial Class FormControlsForm
         Me.UserInputGroupBox = New System.Windows.Forms.GroupBox()
         Me.UserSelectionGroupBox = New System.Windows.Forms.GroupBox()
         Me.UserPictureBox = New System.Windows.Forms.PictureBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.NameTextBox = New System.Windows.Forms.TextBox()
+        Me.StreetTextBox = New System.Windows.Forms.TextBox()
+        Me.StateTextBox = New System.Windows.Forms.TextBox()
+        Me.NameLabel = New System.Windows.Forms.Label()
+        Me.StreetLabel = New System.Windows.Forms.Label()
+        Me.StateLabel = New System.Windows.Forms.Label()
+        Me.DisplayLabel = New System.Windows.Forms.Label()
         Me.UserInputGroupBox.SuspendLayout()
         CType(Me.UserPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -55,6 +59,7 @@ Partial Class FormControlsForm
         '
         'ExitButton
         '
+        Me.ExitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.ExitButton.Location = New System.Drawing.Point(622, 268)
         Me.ExitButton.Name = "ExitButton"
         Me.ExitButton.Size = New System.Drawing.Size(152, 84)
@@ -64,9 +69,12 @@ Partial Class FormControlsForm
         '
         'UserInputGroupBox
         '
-        Me.UserInputGroupBox.Controls.Add(Me.TextBox3)
-        Me.UserInputGroupBox.Controls.Add(Me.TextBox2)
-        Me.UserInputGroupBox.Controls.Add(Me.TextBox1)
+        Me.UserInputGroupBox.Controls.Add(Me.StateLabel)
+        Me.UserInputGroupBox.Controls.Add(Me.StreetLabel)
+        Me.UserInputGroupBox.Controls.Add(Me.NameLabel)
+        Me.UserInputGroupBox.Controls.Add(Me.StateTextBox)
+        Me.UserInputGroupBox.Controls.Add(Me.StreetTextBox)
+        Me.UserInputGroupBox.Controls.Add(Me.NameTextBox)
         Me.UserInputGroupBox.Location = New System.Drawing.Point(12, 12)
         Me.UserInputGroupBox.Name = "UserInputGroupBox"
         Me.UserInputGroupBox.Size = New System.Drawing.Size(250, 250)
@@ -85,36 +93,72 @@ Partial Class FormControlsForm
         '
         Me.UserPictureBox.Location = New System.Drawing.Point(524, 12)
         Me.UserPictureBox.Name = "UserPictureBox"
-        Me.UserPictureBox.Size = New System.Drawing.Size(250, 250)
+        Me.UserPictureBox.Size = New System.Drawing.Size(250, 136)
         Me.UserPictureBox.TabIndex = 5
         Me.UserPictureBox.TabStop = False
         '
-        'TextBox1
+        'NameTextBox
         '
-        Me.TextBox1.Location = New System.Drawing.Point(23, 19)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(199, 20)
-        Me.TextBox1.TabIndex = 6
+        Me.NameTextBox.Location = New System.Drawing.Point(67, 19)
+        Me.NameTextBox.Name = "NameTextBox"
+        Me.NameTextBox.Size = New System.Drawing.Size(155, 20)
+        Me.NameTextBox.TabIndex = 6
         '
-        'TextBox2
+        'StreetTextBox
         '
-        Me.TextBox2.Location = New System.Drawing.Point(23, 45)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(199, 20)
-        Me.TextBox2.TabIndex = 7
+        Me.StreetTextBox.Location = New System.Drawing.Point(67, 45)
+        Me.StreetTextBox.Name = "StreetTextBox"
+        Me.StreetTextBox.Size = New System.Drawing.Size(155, 20)
+        Me.StreetTextBox.TabIndex = 7
         '
-        'TextBox3
+        'StateTextBox
         '
-        Me.TextBox3.Location = New System.Drawing.Point(23, 71)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(199, 20)
-        Me.TextBox3.TabIndex = 8
+        Me.StateTextBox.Location = New System.Drawing.Point(67, 71)
+        Me.StateTextBox.Name = "StateTextBox"
+        Me.StateTextBox.Size = New System.Drawing.Size(155, 20)
+        Me.StateTextBox.TabIndex = 8
+        '
+        'NameLabel
+        '
+        Me.NameLabel.AutoSize = True
+        Me.NameLabel.Location = New System.Drawing.Point(6, 22)
+        Me.NameLabel.Name = "NameLabel"
+        Me.NameLabel.Size = New System.Drawing.Size(35, 13)
+        Me.NameLabel.TabIndex = 9
+        Me.NameLabel.Text = "Name"
+        '
+        'StreetLabel
+        '
+        Me.StreetLabel.AutoSize = True
+        Me.StreetLabel.Location = New System.Drawing.Point(6, 48)
+        Me.StreetLabel.Name = "StreetLabel"
+        Me.StreetLabel.Size = New System.Drawing.Size(45, 13)
+        Me.StreetLabel.TabIndex = 10
+        Me.StreetLabel.Text = "Address"
+        '
+        'StateLabel
+        '
+        Me.StateLabel.AutoSize = True
+        Me.StateLabel.Location = New System.Drawing.Point(6, 74)
+        Me.StateLabel.Name = "StateLabel"
+        Me.StateLabel.Size = New System.Drawing.Size(32, 13)
+        Me.StateLabel.TabIndex = 11
+        Me.StateLabel.Text = "State"
+        '
+        'DisplayLabel
+        '
+        Me.DisplayLabel.Location = New System.Drawing.Point(524, 151)
+        Me.DisplayLabel.Name = "DisplayLabel"
+        Me.DisplayLabel.Size = New System.Drawing.Size(248, 111)
+        Me.DisplayLabel.TabIndex = 6
         '
         'FormControlsForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.ExitButton
         Me.ClientSize = New System.Drawing.Size(784, 361)
+        Me.Controls.Add(Me.DisplayLabel)
         Me.Controls.Add(Me.UserPictureBox)
         Me.Controls.Add(Me.UserSelectionGroupBox)
         Me.Controls.Add(Me.UserInputGroupBox)
@@ -134,9 +178,13 @@ Partial Class FormControlsForm
     Friend WithEvents UpdateButton As Button
     Friend WithEvents ExitButton As Button
     Friend WithEvents UserInputGroupBox As GroupBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents StateTextBox As TextBox
+    Friend WithEvents StreetTextBox As TextBox
+    Friend WithEvents NameTextBox As TextBox
     Friend WithEvents UserSelectionGroupBox As GroupBox
     Friend WithEvents UserPictureBox As PictureBox
+    Friend WithEvents StateLabel As Label
+    Friend WithEvents StreetLabel As Label
+    Friend WithEvents NameLabel As Label
+    Friend WithEvents DisplayLabel As Label
 End Class
