@@ -15,4 +15,12 @@ Public Class FormControlsForm
         displayName = NameTextBox.Text & StreetTextBox.Text & StateTextBox.Text
         DisplayLabel.Text = displayName
     End Sub
+
+    Private Sub GoButton_Click(sender As Object, e As EventArgs) Handles GoButton.Click
+
+    End Sub
+
+    Private Sub FormControlsForm_KeyUp(sender As Object, e As KeyEventArgs) Handles Me.KeyUp
+        RadioButton1.Checked = True
+    End Sub
 End Class
