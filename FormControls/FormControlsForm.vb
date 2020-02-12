@@ -17,7 +17,19 @@ Public Class FormControlsForm
     End Sub
 
     Private Sub GoButton_Click(sender As Object, e As EventArgs) Handles GoButton.Click
+        If CheckBox1.Checked = True Then
+            DisplayLabel.Text = NameTextBox.Text
+        End If
 
+        If CheckBox2.Checked = True Then
+            MsgBox("Hello, your data is no good!")
+        End If
+
+        If CheckBox3.Checked = True Then
+            UserPictureBox.Image = My.Resources.Cat1
+        Else
+            UserPictureBox.Image = Nothing
+        End If
     End Sub
 
     Private Sub FormControlsForm_KeyUp(sender As Object, e As KeyEventArgs) Handles Me.KeyUp
