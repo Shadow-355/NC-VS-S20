@@ -29,6 +29,8 @@ Partial Class DinerMenuForm
         Me.SpecialButton = New System.Windows.Forms.Button()
         Me.ExitButton = New System.Windows.Forms.Button()
         Me.DisplaySpecialLabel = New System.Windows.Forms.Label()
+        Me.PictureBox = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DinerNameLabel
@@ -100,11 +102,23 @@ Partial Class DinerMenuForm
     " back adventurer! What will you be having?""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "~Isabel Morris" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.DisplaySpecialLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
+        'PictureBox
+        '
+        Me.PictureBox.Image = Global.DinerMenu.My.Resources.Resources.Inn
+        Me.PictureBox.InitialImage = Nothing
+        Me.PictureBox.Location = New System.Drawing.Point(810, 12)
+        Me.PictureBox.Name = "PictureBox"
+        Me.PictureBox.Size = New System.Drawing.Size(384, 424)
+        Me.PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox.TabIndex = 7
+        Me.PictureBox.TabStop = False
+        '
         'DinerMenuForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(818, 448)
+        Me.ClientSize = New System.Drawing.Size(1206, 448)
+        Me.Controls.Add(Me.PictureBox)
         Me.Controls.Add(Me.DisplaySpecialLabel)
         Me.Controls.Add(Me.ExitButton)
         Me.Controls.Add(Me.SpecialButton)
@@ -114,6 +128,7 @@ Partial Class DinerMenuForm
         Me.Controls.Add(Me.DinerNameLabel)
         Me.Name = "DinerMenuForm"
         Me.Text = "DinerMenuForm"
+        CType(Me.PictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -126,4 +141,5 @@ Partial Class DinerMenuForm
     Friend WithEvents SpecialButton As Button
     Friend WithEvents ExitButton As Button
     Friend WithEvents DisplaySpecialLabel As Label
+    Friend WithEvents PictureBox As PictureBox
 End Class
