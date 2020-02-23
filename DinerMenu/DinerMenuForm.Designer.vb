@@ -84,11 +84,12 @@ Partial Class DinerMenuForm
         '
         'ExitButton
         '
+        Me.ExitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.ExitButton.Location = New System.Drawing.Point(652, 350)
         Me.ExitButton.Name = "ExitButton"
         Me.ExitButton.Size = New System.Drawing.Size(154, 88)
         Me.ExitButton.TabIndex = 5
-        Me.ExitButton.Text = "Exit Menu"
+        Me.ExitButton.Text = "&Exit Menu"
         Me.ExitButton.UseVisualStyleBackColor = True
         '
         'DisplaySpecialLabel
@@ -117,6 +118,7 @@ Partial Class DinerMenuForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.ExitButton
         Me.ClientSize = New System.Drawing.Size(1206, 448)
         Me.Controls.Add(Me.PictureBox)
         Me.Controls.Add(Me.DisplaySpecialLabel)
