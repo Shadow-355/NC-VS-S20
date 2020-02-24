@@ -26,6 +26,10 @@ Partial Class ListBoxForm
         Me.AddButton = New System.Windows.Forms.Button()
         Me.ClearButton = New System.Windows.Forms.Button()
         Me.ExitButton = New System.Windows.Forms.Button()
+        Me.FirstNameTextBox = New System.Windows.Forms.TextBox()
+        Me.LastNameTextBox = New System.Windows.Forms.TextBox()
+        Me.FirstNameLabel = New System.Windows.Forms.Label()
+        Me.LastNameLabel = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'OutputListBox
@@ -64,12 +68,48 @@ Partial Class ListBoxForm
         Me.ExitButton.Text = "&Exit"
         Me.ExitButton.UseVisualStyleBackColor = True
         '
+        'FirstNameTextBox
+        '
+        Me.FirstNameTextBox.Location = New System.Drawing.Point(94, 12)
+        Me.FirstNameTextBox.Name = "FirstNameTextBox"
+        Me.FirstNameTextBox.Size = New System.Drawing.Size(235, 20)
+        Me.FirstNameTextBox.TabIndex = 4
+        '
+        'LastNameTextBox
+        '
+        Me.LastNameTextBox.Location = New System.Drawing.Point(94, 38)
+        Me.LastNameTextBox.Name = "LastNameTextBox"
+        Me.LastNameTextBox.Size = New System.Drawing.Size(235, 20)
+        Me.LastNameTextBox.TabIndex = 5
+        '
+        'FirstNameLabel
+        '
+        Me.FirstNameLabel.AutoSize = True
+        Me.FirstNameLabel.Location = New System.Drawing.Point(12, 15)
+        Me.FirstNameLabel.Name = "FirstNameLabel"
+        Me.FirstNameLabel.Size = New System.Drawing.Size(57, 13)
+        Me.FirstNameLabel.TabIndex = 6
+        Me.FirstNameLabel.Text = "First Name"
+        '
+        'LastNameLabel
+        '
+        Me.LastNameLabel.AutoSize = True
+        Me.LastNameLabel.Location = New System.Drawing.Point(12, 41)
+        Me.LastNameLabel.Name = "LastNameLabel"
+        Me.LastNameLabel.Size = New System.Drawing.Size(58, 13)
+        Me.LastNameLabel.TabIndex = 7
+        Me.LastNameLabel.Text = "Last Name"
+        '
         'ListBoxForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.ExitButton
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.LastNameLabel)
+        Me.Controls.Add(Me.FirstNameLabel)
+        Me.Controls.Add(Me.LastNameTextBox)
+        Me.Controls.Add(Me.FirstNameTextBox)
         Me.Controls.Add(Me.ExitButton)
         Me.Controls.Add(Me.ClearButton)
         Me.Controls.Add(Me.AddButton)
@@ -77,6 +117,7 @@ Partial Class ListBoxForm
         Me.Name = "ListBoxForm"
         Me.Text = "List Box Form"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -84,4 +125,8 @@ Partial Class ListBoxForm
     Friend WithEvents AddButton As Button
     Friend WithEvents ClearButton As Button
     Friend WithEvents ExitButton As Button
+    Friend WithEvents FirstNameTextBox As TextBox
+    Friend WithEvents LastNameTextBox As TextBox
+    Friend WithEvents FirstNameLabel As Label
+    Friend WithEvents LastNameLabel As Label
 End Class
