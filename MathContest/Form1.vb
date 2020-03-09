@@ -79,9 +79,12 @@ Public Class MathContestForm
     End Sub
 
     Private Sub SubmitButton_Click(sender As Object, e As EventArgs) Handles SubmitButton.Click
+        'Create Variables for Vaildation Check
         Dim validateMessage As String
         Dim overrideMessage As String
 
+
+        'Check for Validation Issues
         If NameTextBox.Text = "" Then
             validateMessage &= "Please enter a valid name." & vbNewLine
             NameTextBox.Select()
@@ -140,9 +143,11 @@ Public Class MathContestForm
             AgeTextBox.Enabled = False
             GradeTextBox.Enabled = False
             ProblemTypeGroupBox.Enabled = False
+            CheckButton.Enabled = True
         End If
 
     End Sub
+
 
     Private Sub ClearButton_Click(sender As Object, e As EventArgs) Handles ClearButton.Click
         SummaryButton.Enabled = False
@@ -153,11 +158,80 @@ Public Class MathContestForm
         AgeTextBox.Enabled = True
         GradeTextBox.Enabled = True
         ProblemTypeGroupBox.Enabled = True
+        CheckButton.Enabled = False
 
         NameTextBox.Text = ""
         AgeTextBox.Text = ""
         GradeTextBox.Text = ""
         FirstNumberTextBox.Text = ""
         SecondNumberTextBox.Text = ""
+    End Sub
+
+    Private Sub CheckButton_Click(sender As Object, e As EventArgs) Handles CheckButton.Click
+        Dim numOne As Integer
+        Dim numTwo As Integer
+        Dim addResult As String
+        Dim subtractResult As String
+        Dim multiplyResult As String
+        Dim divideResult As String
+        Dim submittedResult As String
+
+
+        Try
+            submittedResult = CInt(StudentAnswerTextBox.Text)
+        Catch ex As Exception
+            MessageBox.Show("Please enter a valid answer.")
+            StudentAnswerTextBox.Text = ""
+        End Try
+
+
+        Try
+            numOne = CInt(FirstNumberTextBox.Text)
+            numTwo = CInt(SecondNumberTextBox.Text)
+        Catch ex As Exception
+            MessageBox.Show("Something went wrong. Please Try Again")
+            FirstNumberTextBox.Text = ""
+            SecondNumberTextBox.Text = ""
+        End Try
+
+        If AddRadioButton.Checked = True Then
+            addResult = numOne + numTwo
+            If addResult = submittedResult Then
+                MessageBox.Show("Congragulations! You are correct!")
+            ElseIf addResult <> submittedResult Then
+                MessageBox.Show("Oops! That's not quite right. The answer is: " & addResult)
+            End If
+
+        End If
+
+        If SubtractRadioButton.Checked = True Then
+            subtractResult = numOne - numTwo
+            If subtractResult = submittedResult Then
+                MessageBox.Show("Congragulations! You are correct!")
+            ElseIf subtractResult <> submittedResult Then
+                MessageBox.Show("Oops! That's not quite right. The answer is: " & subtractResult)
+            End If
+
+        End If
+
+        If MultiplyRadioButton.Checked = True Then
+            multiplyResult = numOne * numTwo
+            If multiplyResult = submittedResult Then
+                MessageBox.Show("Congragulations! You are correct!")
+            ElseIf multiplyResult <> submittedResult Then
+                MessageBox.Show("Oops! That's not quite right. The answer is: " & multiplyResult)
+            End If
+
+        End If
+
+        If DivideRadioButton.Checked = True Then
+            divideResult = numOne / numTwo
+            If divideResult = submittedResult Then
+                MessageBox.Show("Congragulations! You are correct!")
+            ElseIf divideResult <> submittedResult Then
+                MessageBox.Show("Oops! That's not quite right. The answer is: " & divideResult)
+            End If
+
+        End If
     End Sub
 End Class

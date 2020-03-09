@@ -46,6 +46,7 @@ Partial Class MathContestForm
         Me.SummaryButton = New System.Windows.Forms.Button()
         Me.ClearButton = New System.Windows.Forms.Button()
         Me.SubmitButton = New System.Windows.Forms.Button()
+        Me.CheckButton = New System.Windows.Forms.Button()
         Me.CurrentMathGroupBox.SuspendLayout()
         Me.StudentInfoGroupBox.SuspendLayout()
         Me.ProblemTypeGroupBox.SuspendLayout()
@@ -237,6 +238,7 @@ Partial Class MathContestForm
         '
         'ButtonGroupBox
         '
+        Me.ButtonGroupBox.Controls.Add(Me.CheckButton)
         Me.ButtonGroupBox.Controls.Add(Me.ExitButton)
         Me.ButtonGroupBox.Controls.Add(Me.SummaryButton)
         Me.ButtonGroupBox.Controls.Add(Me.ClearButton)
@@ -283,10 +285,20 @@ Partial Class MathContestForm
         Me.SubmitButton.Enabled = False
         Me.SubmitButton.Location = New System.Drawing.Point(7, 20)
         Me.SubmitButton.Name = "SubmitButton"
-        Me.SubmitButton.Size = New System.Drawing.Size(137, 43)
+        Me.SubmitButton.Size = New System.Drawing.Size(66, 43)
         Me.SubmitButton.TabIndex = 0
         Me.SubmitButton.Text = "Submit"
         Me.SubmitButton.UseVisualStyleBackColor = True
+        '
+        'CheckButton
+        '
+        Me.CheckButton.Enabled = False
+        Me.CheckButton.Location = New System.Drawing.Point(79, 20)
+        Me.CheckButton.Name = "CheckButton"
+        Me.CheckButton.Size = New System.Drawing.Size(66, 43)
+        Me.CheckButton.TabIndex = 4
+        Me.CheckButton.Text = "Check"
+        Me.CheckButton.UseVisualStyleBackColor = True
         '
         'MathContestForm
         '
@@ -336,4 +348,5 @@ Partial Class MathContestForm
     Friend WithEvents SummaryButton As Button
     Friend WithEvents ClearButton As Button
     Friend WithEvents SubmitButton As Button
+    Friend WithEvents CheckButton As Button
 End Class
