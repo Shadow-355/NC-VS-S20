@@ -4,7 +4,7 @@
 'DiceRoller2000
 'https://github.com/comsnath/NC-VS-S20
 
-Public Class Form1
+Public Class DiceRollerForm
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
 
@@ -72,6 +72,22 @@ Public Class Form1
         OutputListBox.Text &= diceArray(2) & ", " & diceArray(3) & ", " & diceArray(4) & ", " & diceArray(5) _
                          & ", " & diceArray(6) & ", " & diceArray(7) & ", " & diceArray(8) & ", " & diceArray(9) _
                          & ", " & diceArray(10) & ", " & diceArray(11) & ", " & diceArray(12)
+
+
+
+        Console.WriteLine(Space(19) & Roll)
+        For i = LBound(temp) To UBound(temp)
+            Console.Write(CStr(temp(i)).PadLeft(4) & "|")
+        Next
+        Console.WriteLine(StrDup(55, "-"))
+
+
+
+
+
+
+
+
 
     End Sub
 
