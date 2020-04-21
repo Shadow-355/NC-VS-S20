@@ -1,4 +1,11 @@
-﻿Public Class CarRental
+﻿'Nathan Comstock
+'RCET0265
+'Spring 2020
+'CarRental
+'https://github.com/comsnath/NC-VS-S20
+
+
+Public Class CarRental
 
     'Class Variables, storing summary information
     Dim customerNum As Integer
