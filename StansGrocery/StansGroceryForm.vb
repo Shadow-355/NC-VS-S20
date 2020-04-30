@@ -12,8 +12,10 @@ Public Class StansGroceryForm
     Dim x As Integer = 0
     Dim y As Integer = 0
 
-
     Private Sub StansGroceryForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Dim array1(5, 5) As String
+
         'File is located and read as string.
         Dim file As String = "..\..\test.txt"
 
